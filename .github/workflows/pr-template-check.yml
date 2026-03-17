@@ -43,6 +43,12 @@ jobs:
                     --json body \
                     -q .body > pr_body.md
 
+            - name: PR 제목 검증
+              if: steps.check.outputs.run == 'true'
+              env:
+                  PR_TITLE: ${{ github.event.pull_request.title }}
+              run: node .github/scripts/validate-pr-title.mjs "$PR_TITLE"
+
             - name: PR 템플릿 검증
               if: steps.check.outputs.run == 'true'
               run: node .github/scripts/validate-pr-template.mjs pr_body.md
