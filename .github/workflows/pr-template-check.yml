@@ -1,0 +1,48 @@
+name: PR 템플릿 검증
+
+on:
+    pull_request:
+        types: [opened, edited]
+
+permissions:
+    contents: read
+    pull-requests: read
+
+jobs:
+    validate-pr-template:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Check Workflow Branches
+              id: check
+              run: |
+                  node -e "
+                  const cfg = require('./.github/workflow-config.json');
+                  const baseRef = process.env.BASE_REF;
+                  const run = cfg['target-branches'] && cfg['target-branches'].includes(baseRef);
+                  require('fs').appendFileSync(process.env.GITHUB_OUTPUT, 'run=' + run + '\n');
+                  "
+              env:
+                  BASE_REF: ${{ github.event.pull_request.base.ref }}
+
+            - name: Use Node.js
+              if: steps.check.outputs.run == 'true'
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 24
+
+            - name: PR 본문 가져오기
+              if: steps.check.outputs.run == 'true'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  gh pr view "${{ github.event.pull_request.number }}" \
+                    --repo "${{ github.repository }}" \
+                    --json body \
+                    -q .body > pr_body.md
+
+            - name: PR 템플릿 검증
+              if: steps.check.outputs.run == 'true'
+              run: node .github/scripts/validate-pr-template.mjs pr_body.md
