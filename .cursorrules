@@ -1,0 +1,36 @@
+# Commit Message Rules
+
+When creating Git commit messages, always follow the format below.
+
+## Format
+
+```
+<type>(<scope>): <short description in Korean>
+```
+
+## Types
+
+- feat: add a new feature
+- fix: fix a bug
+- docs: documentation changes
+- style: code style changes (no logic impact)
+- refactor: refactoring without behavior change
+- test: add or update tests
+- chore: build, config, tooling changes
+- perf: performance improvements
+
+## Rules
+
+- `type` must be lowercase English
+- Description must be concise and in Korean (within ~50 characters)
+- Do not start with English verbs like "Add", "Update", "Fix"
+
+## Examples
+
+✅ feat(auth): 소셜 로그인 기능 추가
+✅ fix(api): 사용자 조회 에러 수정
+✅ chore(rules): 커밋 메시지 룰 추가
+✅ chore(config): ESLint 설정 추가
+
+❌ Add 소셜 로그인
+❌ Update 설정 파일
