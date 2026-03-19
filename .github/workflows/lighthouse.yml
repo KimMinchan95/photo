@@ -4,12 +4,12 @@ on:
     pull_request:
         types: [opened, synchronize]
         paths:
-            - '**/*.tsx'
-            - '**/*.ts'
-            - 'package.json'
-            - 'pnpm-lock.yaml'
-            - '.github/workflows/lighthouse.yml'
-            - '.github/lighthouserc.json'
+            - "**/*.tsx"
+            - "**/*.ts"
+            - "package.json"
+            - "pnpm-lock.yaml"
+            - ".github/workflows/lighthouse.yml"
+            - ".github/lighthouserc.json"
 
 permissions:
     contents: read
@@ -45,7 +45,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: 24
-                  cache: 'pnpm'
+                  cache: "pnpm"
 
             - name: Install dependencies
               if: steps.check.outputs.run == 'true'

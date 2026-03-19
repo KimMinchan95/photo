@@ -1,5 +1,3 @@
 {
-    "target-branches": [
-        "main"
-    ]
+    "target-branches": ["main"]
 }
