@@ -3,7 +3,7 @@
 ## 1. 기본 셋팅
 
 - [x] 다국어 설정 (ko & en)
-- [ ] light & dark mode
+- [x] light & dark mode
 
 ## 2. 네비게이션 & 헤더
 
