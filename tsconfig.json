@@ -21,7 +21,9 @@
         "paths": {
             "@/*": ["./*"],
             "@shared/*": ["./src/shared/*"],
-            "@views/*": ["./src/views/*"]
+            "@views/*": ["./src/views/*"],
+            "@features/*": ["./src/features/*"],
+            "@widgets/*": ["./src/widgets/*"]
         }
     },
     "include": [
