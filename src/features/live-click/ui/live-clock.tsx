@@ -2,26 +2,26 @@
 
 import { useEffect, useState } from "react";
 
-function formatTime(date: Date) {
-    return new Intl.DateTimeFormat("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-    }).format(date);
-}
+import { DEFAULT_TIME_PLACEHOLDER } from "../model/constants";
+import { formatTime } from "../lib/util";
 
 export function LiveClock() {
-    const [currentTime, setCurrentTime] = useState<string>(() => formatTime(new Date()));
+    const [currentTime, setCurrentTime] = useState<string | null>(null);
 
     useEffect(() => {
+        const initTimerId = window.setTimeout(() => {
+            setCurrentTime(formatTime(new Date()));
+        }, 0);
+
         const timerId = setInterval(() => {
             setCurrentTime(formatTime(new Date()));
         }, 1000);
 
         return () => {
+            clearTimeout(initTimerId);
             clearInterval(timerId);
         };
     }, []);
 
-    return <span>{currentTime}</span>;
+    return <span suppressHydrationWarning>{currentTime ?? DEFAULT_TIME_PLACEHOLDER}</span>;
 }
