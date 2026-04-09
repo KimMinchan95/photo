@@ -5,7 +5,7 @@
 - [x] 다국어 설정 (ko & en)
 - [x] light & dark mode
 - [ ] 헤더 레이아웃 완성 - 80%
-- [ ] light & dark mode 헤더에 연결
+- [x] light & dark mode 헤더에 연결
 - [ ] 메뉴 네비게이션
 
 ## 2. 네비게이션 & 헤더
