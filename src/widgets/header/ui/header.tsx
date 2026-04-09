@@ -1,6 +1,6 @@
-import { NAME_FONT, DESCRIPTION_FONT } from "@widgets/header/model/constants";
+import { NAME_FONT, DESCRIPTION_FONT } from "@shared/config";
 import { LiveClock } from "@features/live-click";
-import { cn } from "@shared/lib";
+import { ThemeToggle } from "@features/theme-toggle";
 
 export function Header() {
     return (
@@ -21,15 +21,7 @@ export function Header() {
                 </div>
                 <div>
                     <p className={NAME_FONT}>Theme:</p>
-                    <div className="flex items-center gap-1">
-                        <button className={cn(DESCRIPTION_FONT, "cursor-pointer")}>
-                            Light Mode
-                        </button>
-                        <span>|</span>
-                        <button className={cn(DESCRIPTION_FONT, "cursor-pointer")}>
-                            Dark Mode
-                        </button>
-                    </div>
+                    <ThemeToggle />
                 </div>
             </div>
         </header>
