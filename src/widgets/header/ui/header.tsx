@@ -1,7 +1,7 @@
 import { NAME_FONT, DESCRIPTION_FONT } from "@shared/config";
 
 import { LiveClock } from "@features/live-click";
-import { ThemeToggle } from "@features/theme-toggle";
+import { ThemeToggleNoSsr } from "@features/theme-toggle";
 
 export function Header() {
     return (
@@ -14,7 +14,7 @@ export function Header() {
                 <div>
                     <p className={NAME_FONT}>Location:</p>
                     <p className={DESCRIPTION_FONT}>
-                        Seoul, Korea (<LiveClock />)
+                        Seoul, Ko rea (<LiveClock />)
                     </p>
                 </div>
                 <div>
@@ -22,7 +22,7 @@ export function Header() {
                 </div>
                 <div>
                     <p className={NAME_FONT}>Theme:</p>
-                    <ThemeToggle />
+                    <ThemeToggleNoSsr />
                 </div>
             </div>
         </header>
