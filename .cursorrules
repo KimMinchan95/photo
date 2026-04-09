@@ -18,6 +18,7 @@ When creating Git commit messages, always follow the format below.
 - test: add or update tests
 - chore: build, config, tooling changes
 - perf: performance improvements
+- todo: add and update a todo item
 
 ## Rules
 
