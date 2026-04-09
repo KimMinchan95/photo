@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
 import { Black_Han_Sans, IBM_Plex_Sans_KR } from "next/font/google";
+
 import { Providers } from "./providers";
+
+import type { Metadata } from "next";
 import "./globals.css";
 
 const manrope = IBM_Plex_Sans_KR({

@@ -1,7 +1,8 @@
-import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 
 import { routing } from "@shared/i18n/routing";
+
 import { Header } from "@widgets/header";
 
 export function generateStaticParams() {

@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { DEFAULT_TIME_PLACEHOLDER } from "../model/constants";
 import { formatTime } from "../lib/util";
+import { DEFAULT_TIME_PLACEHOLDER } from "../model/constants";
 
 export function LiveClock() {
     const [currentTime, setCurrentTime] = useState<string | null>(null);
