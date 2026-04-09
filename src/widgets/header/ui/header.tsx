@@ -14,7 +14,7 @@ export function Header() {
                 <div>
                     <p className={NAME_FONT}>Location:</p>
                     <p className={DESCRIPTION_FONT}>
-                        Seoul, Ko rea (<LiveClock />)
+                        Seoul, Korea (<LiveClock />)
                     </p>
                 </div>
                 <div>
