@@ -24,7 +24,7 @@ export function ThemeToggle() {
             >
                 Light Mode
             </button>
-            <span>|</span>
+            <span className="text-(--text-gray)">|</span>
             <button
                 type="button"
                 className={cn(

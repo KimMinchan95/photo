@@ -1,6 +1,11 @@
 {
     "Home": {
-        "title": "사진 블로그",
-        "description": "민찬의 사진 블로그"
+        "Photo Blog": "사진 블로그",
+        "Minchan's photo blog": "민찬의 사진 블로그"
+    },
+    "Nav": {
+        "Index": "Index",
+        "Work": "Work",
+        "Archive": "Archive"
     }
 }

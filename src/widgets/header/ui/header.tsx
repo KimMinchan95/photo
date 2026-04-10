@@ -3,6 +3,8 @@ import { NAME_FONT, DESCRIPTION_FONT } from "@shared/config";
 import { LiveClock } from "@features/live-click";
 import { ThemeToggleNoSsr } from "@features/theme-toggle";
 
+import { HeaderNav } from "./header-nav";
+
 export function Header() {
     return (
         <header className="fixed inset-x-0 top-[2vh] z-50 box-border max-w-[100vw] px-[1.5vw]">
@@ -19,6 +21,7 @@ export function Header() {
                 </div>
                 <div>
                     <p className={NAME_FONT}>Navigation:</p>
+                    <HeaderNav />
                 </div>
                 <div>
                     <p className={NAME_FONT}>Theme:</p>

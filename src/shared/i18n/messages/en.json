@@ -1,6 +1,11 @@
 {
     "Home": {
-        "title": "Photo Blog",
-        "description": "Minchan's photo blog"
+        "Photo Blog": "Photo Blog",
+        "Minchan's photo blog": "Minchan's photo blog"
+    },
+    "Nav": {
+        "Index": "Index",
+        "Work": "Work",
+        "Archive": "Archive"
     }
 }
