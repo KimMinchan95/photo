@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 
-import { DESCRIPTION_FONT, THEME } from "@shared/config";
+import { HEADER_DESCRIPTION_FONT, THEME } from "@shared/config";
 import { cn } from "@shared/lib";
 
 import { useThemeToggle } from "../model/use-theme-toggle";
@@ -16,7 +16,7 @@ export function ThemeToggle() {
             <button
                 type="button"
                 className={cn(
-                    DESCRIPTION_FONT,
+                    HEADER_DESCRIPTION_FONT,
                     "cursor-pointer",
                     theme !== THEME.LIGHT && "text-(--text-gray)",
                 )}
@@ -24,11 +24,13 @@ export function ThemeToggle() {
             >
                 Light Mode
             </button>
-            <span className="text-(--text-gray)">|</span>
+            <span className={cn(HEADER_DESCRIPTION_FONT, "text-(--text-gray)")}>
+                |
+            </span>
             <button
                 type="button"
                 className={cn(
-                    DESCRIPTION_FONT,
+                    HEADER_DESCRIPTION_FONT,
                     "cursor-pointer",
                     theme !== THEME.DARK && "text-(--text-gray)",
                 )}

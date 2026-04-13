@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Fragment } from "react";
 
-import { DESCRIPTION_FONT } from "@shared/config";
+import { HEADER_DESCRIPTION_FONT } from "@shared/config";
 import { Link, usePathname } from "@shared/i18n/navigation";
 import { cn } from "@shared/lib";
 
@@ -30,7 +30,10 @@ export function HeaderNav() {
                     <Fragment key={labelKey}>
                         {index > 0 ? (
                             <span
-                                className={cn(DESCRIPTION_FONT, "text-(--text-gray)")}
+                                className={cn(
+                                    HEADER_DESCRIPTION_FONT,
+                                    "text-(--text-gray)",
+                                )}
                                 aria-hidden="true"
                             >
                                 |
@@ -39,7 +42,7 @@ export function HeaderNav() {
                         <Link
                             href={href}
                             className={cn(
-                                DESCRIPTION_FONT,
+                                HEADER_DESCRIPTION_FONT,
                                 "transition-opacity hover:opacity-80",
                                 !isActive && "font-bold text-(--text-gray)",
                             )}
