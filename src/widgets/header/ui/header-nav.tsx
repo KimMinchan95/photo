@@ -11,6 +11,7 @@ const navItems = [
     { href: "/", labelKey: "Index" as const },
     { href: "/work", labelKey: "Work" as const },
     { href: "/archive", labelKey: "Archive" as const },
+    { href: "/contact", labelKey: "Contact" as const },
 ];
 
 export function HeaderNav() {
