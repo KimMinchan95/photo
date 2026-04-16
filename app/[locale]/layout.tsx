@@ -25,7 +25,7 @@ export default async function LocaleLayout({
     return (
         <NextIntlClientProvider>
             <Header />
-            <main>{children}</main>
+            <main className="px-[1.5vw] pt-[2vh]">{children}</main>
         </NextIntlClientProvider>
     );
 }
