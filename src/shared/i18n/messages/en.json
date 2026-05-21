@@ -3,6 +3,10 @@
         "Photo Blog": "Photo Blog",
         "Minchan's photo blog": "Minchan's photo blog"
     },
+    "Header": {
+        "Open menu": "Open menu",
+        "Close menu": "Close menu"
+    },
     "Nav": {
         "Index": "Index",
         "Work": "Work",

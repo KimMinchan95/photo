@@ -3,6 +3,10 @@
         "Photo Blog": "사진 블로그",
         "Minchan's photo blog": "민찬의 사진 블로그"
     },
+    "Header": {
+        "Open menu": "Open menu",
+        "Close menu": "Close menu"
+    },
     "Nav": {
         "Index": "Index",
         "Work": "Work",

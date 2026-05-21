@@ -14,12 +14,30 @@ const navItems = [
     { href: "/contact", labelKey: "Contact" as const },
 ];
 
-export function HeaderNav() {
+export function HeaderNav({
+    onNavigate,
+    orientation = "horizontal",
+    compact = false,
+}: {
+    onNavigate?: () => void;
+    orientation?: "horizontal" | "vertical";
+    compact?: boolean;
+}) {
     const t = useTranslations("Nav");
     const pathname = usePathname();
+    const isVertical = orientation === "vertical";
 
     return (
-        <nav className="flex items-center gap-1">
+        <nav
+            className={cn(
+                "flex gap-1",
+                isVertical &&
+                    (compact
+                        ? "flex-col items-stretch gap-0"
+                        : "flex-col items-start gap-2"),
+                !isVertical && "flex-row items-center",
+            )}
+        >
             {navItems.map(({ href, labelKey }, index) => {
                 const isActive =
                     href === "/"
@@ -28,7 +46,7 @@ export function HeaderNav() {
 
                 return (
                     <Fragment key={labelKey}>
-                        {index > 0 ? (
+                        {index > 0 && !isVertical ? (
                             <span
                                 className={cn(
                                     HEADER_DESCRIPTION_FONT,
@@ -41,10 +59,14 @@ export function HeaderNav() {
                         ) : null}
                         <Link
                             href={href}
+                            onClick={onNavigate}
                             className={cn(
                                 HEADER_DESCRIPTION_FONT,
                                 "transition-opacity hover:opacity-80",
                                 !isActive && "font-bold text-(--text-gray)",
+                                isVertical &&
+                                    compact &&
+                                    "flex min-h-11 items-center leading-none",
                             )}
                         >
                             {t(labelKey)}

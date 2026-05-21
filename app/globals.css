@@ -8,6 +8,14 @@
     --text-gray: #787878;
 }
 
+.header-mobile-menu {
+    --text-gray: #404040;
+}
+
+.dark .header-mobile-menu {
+    --text-gray: #a3a3a3;
+}
+
 body {
     font-family:
         var(--font-sans),
