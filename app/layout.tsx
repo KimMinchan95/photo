@@ -29,7 +29,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" suppressHydrationWarning>
-            <body className={`${manrope.variable} ${blackHanSans.variable} antialiased`}>
+            <body
+                className={`${manrope.variable} ${blackHanSans.variable} antialiased`}
+                suppressHydrationWarning
+            >
                 <Providers>{children}</Providers>
             </body>
         </html>
