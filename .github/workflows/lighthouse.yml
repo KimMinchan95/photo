@@ -38,7 +38,7 @@ jobs:
               if: steps.check.outputs.run == 'true'
               uses: pnpm/action-setup@v4
               with:
-                  version: 10.0.0
+                  version: 11.3.0
 
             - name: Setup Node.js
               if: steps.check.outputs.run == 'true'
