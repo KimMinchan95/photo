@@ -74,7 +74,7 @@ function main() {
         errors.push('"✅ 체크리스트"에서 확인한 항목을 하나 이상 체크해 주세요.');
     }
 
-    if (!!errors.length) {
+    if (errors.length) {
         console.error("PR 템플릿 검증 실패:\n");
         errors.forEach((e) => console.error(`- ${e}`));
         process.exit(1);
