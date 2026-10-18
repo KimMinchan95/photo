@@ -1,7 +1,5 @@
-import {
-    HEADER_DESCRIPTION_FONT,
-    HEADER_NAME_FONT,
-} from "@shared/config";
+import { DESCRIPTION_FONT, NAME_FONT } from "@shared/config";
+import { cn } from "@shared/lib";
 
 import { LiveClock } from "@features/live-click";
 import { ThemeToggleNoSsr } from "@features/theme-toggle";
@@ -11,10 +9,8 @@ import { HeaderNav } from "./header-nav";
 export function HeaderBrand() {
     return (
         <div>
-            <p className={HEADER_NAME_FONT}>Kim MinChan:</p>
-            <p className={HEADER_DESCRIPTION_FONT}>
-                Independent Photographer
-            </p>
+            <p className={cn(NAME_FONT)}>Kim MinChan:</p>
+            <p className={cn(DESCRIPTION_FONT)}>Independent Photographer</p>
         </div>
     );
 }
@@ -22,8 +18,8 @@ export function HeaderBrand() {
 export function HeaderLocation() {
     return (
         <div>
-            <p className={HEADER_NAME_FONT}>Location:</p>
-            <p className={HEADER_DESCRIPTION_FONT}>
+            <p className={cn(NAME_FONT)}>Location:</p>
+            <p className={cn(DESCRIPTION_FONT)}>
                 Seoul, Korea (<LiveClock />)
             </p>
         </div>
@@ -33,20 +29,18 @@ export function HeaderLocation() {
 export function HeaderNavigation({
     onNavigate,
     orientation = "horizontal",
-    compact = false,
+    showLabel = true,
+    variant = "meta",
 }: {
     onNavigate?: () => void;
     orientation?: "horizontal" | "vertical";
-    compact?: boolean;
+    showLabel?: boolean;
+    variant?: "meta" | "sheet";
 }) {
     return (
-        <div className={compact ? "flex flex-col gap-0" : undefined}>
-            <p className={HEADER_NAME_FONT}>Navigation:</p>
-            <HeaderNav
-                onNavigate={onNavigate}
-                orientation={orientation}
-                compact={compact}
-            />
+        <div>
+            {showLabel ? <p className={cn(NAME_FONT)}>Navigation:</p> : null}
+            <HeaderNav onNavigate={onNavigate} orientation={orientation} variant={variant} />
         </div>
     );
 }
@@ -54,7 +48,7 @@ export function HeaderNavigation({
 export function HeaderTheme() {
     return (
         <div>
-            <p className={HEADER_NAME_FONT}>Theme:</p>
+            <p className={cn(NAME_FONT)}>Theme:</p>
             <ThemeToggleNoSsr />
         </div>
     );

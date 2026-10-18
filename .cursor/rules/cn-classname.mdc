@@ -1,0 +1,25 @@
+---
+description: className은 @shared/lib의 cn으로 조합한다
+globs: "**/*.tsx"
+alwaysApply: true
+---
+
+# className은 cn으로 조합
+
+`className`은 `@shared/lib`의 `cn`으로 넣는다. 클래스가 하나여도 `cn`을 쓴다.
+
+- 문자열 연결, 템플릿 리터럴, 중첩 삼항으로 class 문자열을 만들지 않는다.
+- 조건부는 `condition && "classes"`로 `cn`에 넘긴다.
+- 타이포그래피 토큰 같은 클래스 상수도 `cn(TOKEN, "...")`로 합친다.
+- 컴포넌트 스타일은 `globals.css` 선택자로 두지 않는다. Tailwind 유틸과 `cn`으로 둔다. 키프레임만 CSS `@theme`에 둔다.
+
+```tsx
+// 잘못된 예
+className={`flex ${isActive ? "text-current" : "text-(--text-gray)"}`}
+
+// 맞는 예
+className={cn(
+    "flex items-center",
+    isActive ? "text-current" : "text-(--text-gray)",
+)}
+```
