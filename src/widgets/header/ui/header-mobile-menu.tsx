@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import { cn } from "@shared/lib";
 
 import { LiveClock } from "@features/live-click";
-import { ThemeToggleNoSsr } from "@features/theme-toggle";
+import { ThemeToggle } from "@features/theme-toggle";
 
 import { HeaderNav } from "./header-nav";
 
@@ -166,7 +166,7 @@ export function HeaderMobileMenu() {
                               <br />
                               <LiveClock />
                           </p>
-                          <ThemeToggleNoSsr />
+                          <ThemeToggle />
                       </div>
                   </div>,
                   document.body,

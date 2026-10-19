@@ -2,7 +2,7 @@ import { DESCRIPTION_FONT, NAME_FONT } from "@shared/config";
 import { cn } from "@shared/lib";
 
 import { LiveClock } from "@features/live-click";
-import { ThemeToggleNoSsr } from "@features/theme-toggle";
+import { ThemeToggle } from "@features/theme-toggle";
 
 import { HeaderNav } from "./header-nav";
 
@@ -49,7 +49,7 @@ export function HeaderTheme() {
     return (
         <div>
             <p className={cn(NAME_FONT)}>Theme:</p>
-            <ThemeToggleNoSsr />
+            <ThemeToggle />
         </div>
     );
 }
