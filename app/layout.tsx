@@ -1,5 +1,7 @@
 import { Black_Han_Sans, IBM_Plex_Sans_KR } from "next/font/google";
 
+import { cn } from "@shared/lib";
+
 import { Providers } from "./providers";
 
 import type { Metadata } from "next";
@@ -30,7 +32,12 @@ export default function RootLayout({
     return (
         <html lang="ko" suppressHydrationWarning>
             <body
-                className={`${manrope.variable} ${blackHanSans.variable} antialiased`}
+                className={cn(
+                    manrope.variable,
+                    blackHanSans.variable,
+                    "bg-white text-zinc-950 antialiased",
+                    "[.dark_&]:bg-black [.dark_&]:text-zinc-50",
+                )}
                 suppressHydrationWarning
             >
                 <Providers>{children}</Providers>

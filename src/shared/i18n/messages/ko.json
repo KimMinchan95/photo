@@ -12,5 +12,13 @@
         "Work": "Work",
         "Archive": "Archive",
         "Contact": "Contact"
+    },
+    "Contact": {
+        "Email": "메일:",
+        "Instagram": "인스타그램:",
+        "Based in": "위치:",
+        "Practice": "사진:",
+        "Location": "서울, 한국",
+        "Personal": "취미로 찍는 사진"
     }
 }
