@@ -5,7 +5,8 @@ import { useTranslations } from "next-intl";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { cn, useIsClient } from "@shared/lib";
+import { cn } from "@shared/lib";
+import { useIsClient } from "@shared/lib/use-is-client";
 
 import { LiveClock } from "@features/live-click";
 import { ThemeToggle } from "@features/theme-toggle";

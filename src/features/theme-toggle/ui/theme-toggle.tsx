@@ -3,7 +3,8 @@
 import { useTheme } from "next-themes";
 
 import { DESCRIPTION_FONT, THEME } from "@shared/config";
-import { cn, useIsClient } from "@shared/lib";
+import { cn } from "@shared/lib";
+import { useIsClient } from "@shared/lib/use-is-client";
 
 import { useThemeToggle } from "../model/use-theme-toggle";
 
