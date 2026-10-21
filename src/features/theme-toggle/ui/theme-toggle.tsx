@@ -1,26 +1,17 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useSyncExternalStore } from "react";
 
 import { DESCRIPTION_FONT, THEME } from "@shared/config";
-import { cn } from "@shared/lib";
+import { cn, useIsClient } from "@shared/lib";
 
 import { useThemeToggle } from "../model/use-theme-toggle";
 
-const subscribe = () => () => {};
-const getClientSnapshot = () => true;
-const getServerSnapshot = () => false;
-
-function useIsMounted() {
-    return useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
-}
-
 export function ThemeToggle() {
     const { resolvedTheme } = useTheme();
-    const isMounted = useIsMounted();
+    const isClient = useIsClient();
     const { handleLightMode, handleDarkMode } = useThemeToggle();
-    const activeTheme = isMounted ? resolvedTheme : undefined;
+    const activeTheme = isClient ? resolvedTheme : undefined;
 
     return (
         <div className={cn("flex items-center gap-1")}>

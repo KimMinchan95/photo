@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { cn } from "@shared/lib";
+import { cn, useIsClient } from "@shared/lib";
 
 import { LiveClock } from "@features/live-click";
 import { ThemeToggle } from "@features/theme-toggle";
@@ -28,14 +28,10 @@ const sheetItemClass = cn("animate-header-sheet-item motion-reduce:animate-none"
 
 export function HeaderMobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
+    const isClient = useIsClient();
     const buttonRef = useRef<HTMLButtonElement>(null);
     const panelId = useId();
     const t = useTranslations("Header");
-
-    useEffect(function markMounted() {
-        setIsMounted(true);
-    }, []);
 
     useEffect(
         function addEscapeListener() {
@@ -106,7 +102,7 @@ export function HeaderMobileMenu() {
     );
 
     const sheet =
-        isMounted && isOpen
+        isClient && isOpen
             ? createPortal(
                   <div
                       id={panelId}
@@ -176,7 +172,7 @@ export function HeaderMobileMenu() {
     return (
         <div className={cn("shrink-0")}>
             {isOpen ? null : menuButton}
-            {isMounted && isOpen ? createPortal(menuButton, document.body) : null}
+            {isClient && isOpen ? createPortal(menuButton, document.body) : null}
             {sheet}
         </div>
     );
