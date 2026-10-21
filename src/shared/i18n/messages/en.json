@@ -13,6 +13,15 @@
         "Archive": "Archive",
         "Contact": "Contact"
     },
+    "Work": {
+        "Label": "Work:",
+        "Empty": "No works yet.",
+        "Open photo": "Open photo {index}",
+        "Close": "Close",
+        "Previous": "Previous photo",
+        "Next": "Next photo",
+        "Count": "{current} of {total}"
+    },
     "Contact": {
         "Email": "Email:",
         "Instagram": "Instagram:",

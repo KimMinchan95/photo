@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 
-import { DESCRIPTION_FONT, THEME } from "@shared/config";
+import { THEME } from "@shared/config";
 import { cn } from "@shared/lib";
 import { useIsClient } from "@shared/lib/use-is-client";
 
@@ -15,29 +15,27 @@ export function ThemeToggle() {
     const activeTheme = isClient ? resolvedTheme : undefined;
 
     return (
-        <div className={cn("flex items-center gap-1")}>
+        <div className={cn("flex flex-wrap items-center gap-x-1")}>
             <button
                 type="button"
                 className={cn(
-                    DESCRIPTION_FONT,
-                    "cursor-pointer",
+                    "cursor-pointer font-sans text-xs leading-[1.95]",
                     activeTheme && activeTheme !== THEME.LIGHT && "text-(--text-gray)",
                 )}
                 onClick={handleLightMode}
             >
-                Light Mode
+                Light
             </button>
-            <span className={cn(DESCRIPTION_FONT, "text-(--text-gray)")}>|</span>
+            <span className={cn("font-sans text-xs leading-[1.95] text-(--text-gray)")}>|</span>
             <button
                 type="button"
                 className={cn(
-                    DESCRIPTION_FONT,
-                    "cursor-pointer",
+                    "cursor-pointer font-sans text-xs leading-[1.95]",
                     activeTheme && activeTheme !== THEME.DARK && "text-(--text-gray)",
                 )}
                 onClick={handleDarkMode}
             >
-                Dark Mode
+                Dark
             </button>
         </div>
     );

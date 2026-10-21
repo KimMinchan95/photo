@@ -13,6 +13,15 @@
         "Archive": "Archive",
         "Contact": "Contact"
     },
+    "Work": {
+        "Label": "작업:",
+        "Empty": "아직 올린 작업이 없습니다.",
+        "Open photo": "{index}번째 사진 크게 보기",
+        "Close": "닫기",
+        "Previous": "이전 사진",
+        "Next": "다음 사진",
+        "Count": "{current} / {total}"
+    },
     "Contact": {
         "Email": "메일:",
         "Instagram": "인스타그램:",

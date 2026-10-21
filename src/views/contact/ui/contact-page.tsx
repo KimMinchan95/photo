@@ -34,7 +34,7 @@ export async function ContactPage() {
     ];
 
     return (
-        <section className={cn("pt-[12vh] pb-[max(3rem,env(safe-area-inset-bottom))]")}>
+        <section className={cn("pb-[max(3rem,env(safe-area-inset-bottom))]")}>
             <div
                 className={cn(
                     "grid items-end gap-x-16 gap-y-14 lg:grid-cols-[minmax(0,1.3fr)_minmax(16rem,0.8fr)]",
