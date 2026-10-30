@@ -121,8 +121,8 @@ export function Sidebar() {
                                 </li>
                             );
                         })}
-                        <li aria-hidden="true">
-                            <span className={cn(linkClass, "text-(--text-gray)")}>--------</span>
+                        <li aria-hidden="true" className={cn("flex h-[calc(0.75rem*1.95)] items-center")}>
+                            <span className={cn("block h-px w-6 bg-(--text-gray)")} />
                         </li>
                         <li>
                             <Link
@@ -140,24 +140,23 @@ export function Sidebar() {
                                 {t("Archive")}
                             </Link>
                         </li>
-                        <li>
-                            <a
-                                href={`mailto:${CONTACT_EMAIL}`}
-                                onClick={close}
-                                className={itemClass(false)}
-                            >
-                                {t("Contact")}
-                            </a>
-                        </li>
                     </ul>
                 </nav>
 
                 <div className={cn("mt-4")}>
                     <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        onClick={close}
+                        className={cn(linkClass, "block text-current hover:opacity-60")}
+                    >
+                        {t("Contact")}
+                    </a>
+                    <a
                         href={INSTAGRAM_URL}
                         target="_blank"
                         rel="noreferrer"
-                        className={cn(linkClass, "text-current hover:opacity-60")}
+                        onClick={close}
+                        className={cn(linkClass, "block text-current hover:opacity-60")}
                     >
                         instagram
                     </a>
