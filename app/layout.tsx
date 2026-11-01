@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Black_Han_Sans, IBM_Plex_Sans_KR } from "next/font/google";
 
 import { cn } from "@shared/lib";
@@ -41,6 +42,7 @@ export default function RootLayout({
                 suppressHydrationWarning
             >
                 <Providers>{children}</Providers>
+                <Analytics />
             </body>
         </html>
     );

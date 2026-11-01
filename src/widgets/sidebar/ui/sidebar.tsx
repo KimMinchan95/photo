@@ -9,6 +9,7 @@ import { cn } from "@shared/lib";
 
 import { LiveClock } from "@features/live-click";
 import { ThemeToggle } from "@features/theme-toggle";
+import { VisitCount } from "@features/visit-count";
 
 import { CONTACT_EMAIL, INSTAGRAM_URL } from "@views/contact/model/links";
 import { workCopy, works } from "@views/work/model/works";
@@ -16,10 +17,7 @@ import { workCopy, works } from "@views/work/model/works";
 const linkClass = cn("font-sans text-xs leading-[1.95] lowercase transition-colors");
 
 function itemClass(isActive: boolean) {
-    return cn(
-        linkClass,
-        isActive ? "text-(--accent)" : "text-(--text-gray) hover:text-(--accent)",
-    );
+    return cn(linkClass, isActive ? "text-(--accent)" : "text-(--text-gray) hover:text-(--accent)");
 }
 
 export function Sidebar() {
@@ -121,7 +119,10 @@ export function Sidebar() {
                                 </li>
                             );
                         })}
-                        <li aria-hidden="true" className={cn("flex h-[calc(0.75rem*1.95)] items-center")}>
+                        <li
+                            aria-hidden="true"
+                            className={cn("flex h-[calc(0.75rem*1.95)] items-center")}
+                        >
                             <span className={cn("block h-px w-6 bg-(--text-gray)")} />
                         </li>
                         <li>
@@ -162,7 +163,8 @@ export function Sidebar() {
                     </a>
                 </div>
 
-                <p className={cn("mt-4 font-sans text-xs leading-[1.95] text-(--text-gray)")}>
+                <VisitCount />
+                <p className={cn("font-sans text-xs leading-[1.95] text-(--text-gray)")}>
                     Seoul, Korea
                     <br />
                     <LiveClock />
