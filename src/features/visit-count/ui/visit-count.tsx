@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { isDevelopment } from "@shared/config";
 import { cn } from "@shared/lib";
 
 import type { VisitCounts } from "../model/types";
@@ -10,6 +11,10 @@ export function VisitCount() {
     const [counts, setCounts] = useState<VisitCounts | null>(null);
 
     useEffect(() => {
+        if (isDevelopment) {
+            return;
+        }
+
         const controller = new AbortController();
 
         void fetch("/api/visits", { signal: controller.signal })
@@ -26,6 +31,10 @@ export function VisitCount() {
 
         return () => controller.abort();
     }, []);
+
+    if (isDevelopment) {
+        return null;
+    }
 
     return (
         <p className={cn("mt-4 font-sans text-xs leading-[1.95] text-(--text-gray)")}>
