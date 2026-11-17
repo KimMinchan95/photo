@@ -1,3 +1,5 @@
+import path from "node:path";
+
 import eslintJs from "@eslint/js";
 import eslintReact from "@eslint-react/eslint-plugin";
 import nextPlugin from "@next/eslint-plugin-next";
@@ -7,6 +9,8 @@ import { flatConfigs as importXConfigs } from "eslint-plugin-import-x";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 import { configs as tseslintConfigs } from "typescript-eslint";
+
+const rootDir = import.meta.dirname;
 
 // eslint-disable-next-line import-x/no-named-as-default-member -- CJS interop; named ESM export is unavailable
 const { configs: nextConfigs } = nextPlugin;
@@ -33,13 +37,14 @@ const eslintConfig = defineConfig([
                         "postcss.config.mjs",
                     ],
                 },
-                tsconfigRootDir: import.meta.dirname,
+                tsconfigRootDir: rootDir,
             },
         },
         settings: {
             "import-x/resolver-next": [
                 createTypeScriptImportResolver({
-                    project: "./tsconfig.json",
+                    alwaysTryTypes: true,
+                    project: path.join(rootDir, "tsconfig.json"),
                 }),
             ],
         },

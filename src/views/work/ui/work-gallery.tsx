@@ -30,7 +30,8 @@ export function WorkGallery({
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const activeImage = activeIndex === null ? null : images[activeIndex];
     const isTiles = layout === "tiles";
-    const targetHeight = width < 720 ? (isTiles ? 156 : 180) : isTiles ? 240 : 320;
+    const isCompact = width < 720;
+    const targetHeight = isCompact ? (isTiles ? 250 : 230) : 350;
     const rows = layoutRows(images, width, targetHeight);
 
     useEffect(() => {
@@ -96,7 +97,7 @@ export function WorkGallery({
         <>
             <div
                 ref={frameRef}
-                className={cn("flex w-full min-w-0 max-w-[1400px] flex-col")}
+                className={cn("flex w-full max-w-[1400px] min-w-0 flex-col")}
                 style={{ gap: ROW_GAP }}
             >
                 {rows.map((row) => (
