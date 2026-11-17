@@ -20,16 +20,29 @@ const blackHanSans = Black_Han_Sans({
     weight: ["400"],
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+    metadataBase: new URL(siteUrl),
     title: "Chan's photo",
-    description: "김민찬의 사진. 서울에서 찍은 인물, 거리, 풍경.",
+    description: "김민찬의 사진. 인물, 거리, 풍경 등 추억의 순간들을 담은 공간입니다.",
     openGraph: {
         title: "Chan's photo",
-        description: "김민찬의 사진. 서울에서 찍은 인물, 거리, 풍경.",
-        images: ["/photos/portrait/DSC_2562.webp"],
+        description: "김민찬의 사진. 인물, 거리, 풍경 등 추억의 순간들을 담은 공간입니다.",
+        images: [
+            {
+                url: "/og.jpg",
+                width: 682,
+                height: 1024,
+                alt: "Chan's photo",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
+        images: ["/og.jpg"],
     },
 };
 
