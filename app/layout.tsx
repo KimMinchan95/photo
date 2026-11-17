@@ -21,8 +21,16 @@ const blackHanSans = Black_Han_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "Photo",
-    description: "Photo",
+    title: "Chan's photo",
+    description: "김민찬의 사진. 서울에서 찍은 인물, 거리, 풍경.",
+    openGraph: {
+        title: "Chan's photo",
+        description: "김민찬의 사진. 서울에서 찍은 인물, 거리, 풍경.",
+        images: ["/photos/portrait/DSC_2562.webp"],
+    },
+    twitter: {
+        card: "summary_large_image",
+    },
 };
 
 export default function RootLayout({
