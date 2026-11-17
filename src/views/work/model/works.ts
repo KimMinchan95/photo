@@ -78,7 +78,14 @@ export const works: Work[] = [
         title: { ko: "Portrait", en: "Portrait" },
         place: { ko: "서울", en: "Seoul" },
         layout: "tiles",
-        images: frames("portrait", 0),
+        images: [
+            {
+                id: "portrait-dsc-2562",
+                src: "/photos/portrait/DSC_2562.webp",
+                width: 1328,
+                height: 1992,
+            },
+        ],
     },
     {
         slug: "street",
